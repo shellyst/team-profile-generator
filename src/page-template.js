@@ -21,8 +21,8 @@ function contentHTML(data) {
         </div>`;
   }
 
-  const content = [];
-  content.push(
+  const info = [];
+  info.push(
     data
       .filter((item) => item.getRole() === "Intern")
       .map((intern) => createIntern(intern))
@@ -35,8 +35,8 @@ function contentHTML(data) {
         </div>`;
   }
 
-  const content = [];
-  content.push(
+  const morecontent = [];
+  morecontent.push(
     data
       .filter((item) => item.getRole() === "Engineer")
       .map((engineer) => createEngineer(engineer))
@@ -51,11 +51,18 @@ module.exports = (team) => {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./src/styles.css">
     <title>Team Profile Generator</title>
 </head>
 <body>
+<div class="containter-fluid">
+<div class="row">
+<h1 class="text-center">My Team</h1>
     ${contentHTML(team)}
+    </div>
+    </div>
 </body>
 </html>
     `;
