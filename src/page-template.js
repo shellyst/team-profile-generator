@@ -19,9 +19,28 @@ function contentHTML(data) {
         <div class="intern">
         ${intern.getName()}
         </div>`;
-    }
-    
-    
+  }
+
+  const content = [];
+  content.push(
+    data
+      .filter((item) => item.getRole() === "Intern")
+      .map((intern) => createIntern(intern))
+  );
+
+  function createEngineer(engineer) {
+    return `
+        <div class="engineer">
+        ${engineer.getName()}
+        </div>`;
+  }
+
+  const content = [];
+  content.push(
+    data
+      .filter((item) => item.getRole() === "Engineer")
+      .map((engineer) => createEngineer(engineer))
+  );
 }
 
 module.exports = (team) => {
