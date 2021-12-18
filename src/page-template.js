@@ -1,7 +1,27 @@
 function contentHTML(data) {
-    function createManager() {
-        
+  function createManager(manager) {
+    return `
+    <div class="manager">  
+    ${manager.getName()}
+</div>
+        `;
+  }
+
+  const content = [];
+  content.push(
+    data
+      .filter((item) => item.getRole() === "Manager")
+      .map((manager) => createManager(manager))
+  );
+
+  function createIntern(intern) {
+    return `
+        <div class="intern">
+        ${intern.getName()}
+        </div>`;
     }
+    
+    
 }
 
 module.exports = (team) => {
@@ -21,3 +41,5 @@ module.exports = (team) => {
 </html>
     `;
 };
+
+//Install Bootstrap for CSS
