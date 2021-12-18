@@ -1,6 +1,7 @@
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const HTML = require("./src/page-template");
 
 const inquirer = require("inquirer");
 const fs = require("fs");
@@ -74,8 +75,8 @@ function start() {
   }
 
   function createEngineer() {
-    inquirer,
-      prompt([
+    inquirer
+      .prompt([
         {
           type: "input",
           name: "engineerName",
@@ -96,12 +97,12 @@ function start() {
           name: "engineerOfficeNum",
           message: "What is your engineer's office number?",
         },
-      ]).then((answers) => {
+      ])
+      .then((answers) => {
         const engineer = new Engineer(
           answers.engineerName,
           answers.engineerId,
-          answers,
-          engineerEmail,
+          answers.engineerEmail,
           answers.engineerOfficeNum
         );
         idArray.push(answers.id);
@@ -111,8 +112,8 @@ function start() {
   }
 
   function createIntern() {
-    inquirer,
-      prompt([
+    inquirer
+      .prompt([
         {
           type: "input",
           name: "internName",
@@ -133,7 +134,8 @@ function start() {
           name: "internOfficeNum",
           message: "What is your intern's office number?",
         },
-      ]).then((answers) => {
+      ])
+      .then((answers) => {
         const intern = new Intern(
           answers.internName,
           answers.internId,
@@ -145,4 +147,10 @@ function start() {
         createMembers();
       });
   }
+}
+
+function build() {
+  fs.writeFile("team.html", HTML(teamMembers), (err) => {
+    err ? console.log(err) : console.log("Your HTML file has been created!");
+  });
 }
