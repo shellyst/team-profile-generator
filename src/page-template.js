@@ -1,8 +1,12 @@
 function contentHTML(data) {
   function createManager(manager) {
     return `
-    <div class="manager">  
-    ${manager.getName()}
+    <div class="card">
+    <div class="manager"><h2>Manager</h2> 
+    <h3>${manager.getName()}</h3>
+    <p>ID:</p>
+    <p>Email: <a href="mailto:${emailhere}">${emailhere}</a></p>
+</div>
 </div>
         `;
   }
