@@ -94,11 +94,6 @@ function start() {
         },
         {
           type: "input",
-          name: "engineerOfficeNum",
-          message: "What is your engineer's office number?",
-        },
-        {
-          type: "input",
           name: "engineerGithub",
           message: "What is your eningeer's Github username?",
         },
@@ -108,7 +103,7 @@ function start() {
           answers.engineerName,
           answers.engineerId,
           answers.engineerEmail,
-          answers.engineerOfficeNum
+          answers.engineerGithub
         );
         idArray.push(answers.id);
         teamMembers.push(engineer);
@@ -136,11 +131,6 @@ function start() {
         },
         {
           type: "input",
-          name: "internOfficeNum",
-          message: "What is your intern's office number?",
-        },
-        {
-          type: "input",
           name: "internSchool",
           message: "What is your intern's school?",
         },
@@ -150,7 +140,7 @@ function start() {
           answers.internName,
           answers.internId,
           answers.internEmail,
-          answers.internOfficeNum
+          answers.internSchool
         );
         idArray.push(answers.id);
         teamMembers.push(intern);

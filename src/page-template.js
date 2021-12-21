@@ -11,13 +11,6 @@ function contentHTML(data) {
         `;
   }
 
-  const managerContent = [];
-  managerContent.push(
-    data
-      .filter((item) => item.getRole() === "Manager")
-      .map((manager) => createManager(manager))
-  );
-
   function createIntern(intern) {
     return `
     <div class="card">
@@ -31,12 +24,7 @@ function contentHTML(data) {
         </div>`;
   }
 
-  const info = [];
-  info.push(
-    data
-      .filter((item) => item.getRole() === "Intern")
-      .map((intern) => createIntern(intern))
-  );
+  
 
   function createEngineer(engineer) {
     return `
@@ -45,18 +33,31 @@ function contentHTML(data) {
        <h3>${engineer.getName()}</h3>
        <p>ID:${engineer.getId()}</p>
       <p>Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
-      <p>Github: [${engineer.getGithub()}](https://github.com/${engineer.getGitHubt()})</p>
+      <p>Github: [${engineer.getGithub()}](https://github.com/${engineer.getGithub()})</p>
         </div>
         </div>
         </div>`;
   }
 
-  const morecontent = [];
-  morecontent.push(
+   const content = [];
+   content.push(
+     data
+       .filter((item) => item.getRole() === "Manager")
+       .map((manager) => createManager(manager))
+   );
+
+  content.push(
     data
       .filter((item) => item.getRole() === "Engineer")
       .map((engineer) => createEngineer(engineer))
   );
+
+  content.push(
+    data
+      .filter((item) => item.getRole() === "Intern")
+      .map((intern) => createIntern(intern))
+  );
+  return content.join("")
 }
 
 module.exports = (team) => {
