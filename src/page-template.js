@@ -1,18 +1,18 @@
 function contentHTML(data) {
   function createManager(manager) {
-    return `
-    <div class="card">
+    return `<div class="card">
     <div class="manager"><h2>Manager</h2> 
     <h3>${manager.getName()}</h3>
-    <p>ID:</p>
-    <p>Email: <a href="mailto:${emailhere}">${emailhere}</a></p>
+    <p>ID:${manager.getID()}</p>
+    <p>Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></p>
+    <p>Office Number: ${manager.getOfficeNumber()}</p>
 </div>
 </div>
         `;
   }
 
-  const content = [];
-  content.push(
+  const managerContent = [];
+  managerContent.push(
     data
       .filter((item) => item.getRole() === "Manager")
       .map((manager) => createManager(manager))
@@ -20,8 +20,15 @@ function contentHTML(data) {
 
   function createIntern(intern) {
     return `
+    <div class="card">
+    <div class="Intern"><h2>Intern</h2> 
         <div class="intern">
-        ${intern.getName()}
+        <h3>${intern.getName()}</h3>
+       </div>
+      <p>ID:${intern.getID()}</p>
+      <p>Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></p>
+      <p>School: ${intern.getSchool()}</p>
+       </div>
         </div>`;
   }
 
@@ -34,8 +41,12 @@ function contentHTML(data) {
 
   function createEngineer(engineer) {
     return `
+    <div class="card">
+    <div class="engineer"><h2>Engineer</h2> 
         <div class="engineer">
-        ${engineer.getName()}
+       <h3>${engineer.getName()}</h3>
+        </div>
+        </div>
         </div>`;
   }
 
@@ -71,5 +82,3 @@ module.exports = (team) => {
 </html>
     `;
 };
-
-//Install Bootstrap for CSS
