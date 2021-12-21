@@ -97,6 +97,11 @@ function start() {
           name: "engineerOfficeNum",
           message: "What is your engineer's office number?",
         },
+        {
+          type: "input",
+          name: "engineerGithub",
+          message: "What is your eningeer's Github username?",
+        },
       ])
       .then((answers) => {
         const engineer = new Engineer(
@@ -133,6 +138,11 @@ function start() {
           type: "input",
           name: "internOfficeNum",
           message: "What is your intern's office number?",
+        },
+        {
+          type: "input",
+          name: "internSchool",
+          message: "What is your intern's school?",
         },
       ])
       .then((answers) => {
