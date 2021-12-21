@@ -3,7 +3,7 @@ function contentHTML(data) {
     return `<div class="card">
     <div class="manager"><h2>Manager</h2> 
     <h3>${manager.getName()}</h3>
-    <p>ID:${manager.getID()}</p>
+    <p>ID:${manager.getId()}</p>
     <p>Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></p>
     <p>Office Number: ${manager.getOfficeNumber()}</p>
 </div>
@@ -23,7 +23,7 @@ function contentHTML(data) {
     <div class="card">
     <div class="intern"><h2>Intern</h2> 
         <h3>${intern.getName()}</h3>
-      <p>ID:${intern.getID()}</p>
+      <p>ID:${intern.getId()}</p>
       <p>Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></p>
       <p>School: ${intern.getSchool()}</p>
       </div>
@@ -43,9 +43,9 @@ function contentHTML(data) {
     <div class="card">
     <div class="engineer"><h2>Engineer</h2> 
        <h3>${engineer.getName()}</h3>
-       <p>ID:${engineer.getID()}</p>
+       <p>ID:${engineer.getId()}</p>
       <p>Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
-      <p>Github: [${engineer.getGitHub()}](https://github.com/${engineer.getGitHubt()})
+      <p>Github: [${engineer.getGithub()}](https://github.com/${engineer.getGitHubt()})</p>
         </div>
         </div>
         </div>`;
