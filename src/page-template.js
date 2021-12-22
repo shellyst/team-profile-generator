@@ -16,9 +16,11 @@ function contentHTML(data) {
 
   function createIntern(intern) {
     return `
-    <div class="card" width: 18rem">
-    <div class="intern"><h2>Intern</h2> 
-        <h3>${intern.getName()}</h3>
+<div class="card mr-1 mt-3">   
+<div class="card-header"> 
+<h2 class="card-title">Intern</h2> 
+        <h3 class="card-title bg-primary">${intern.getName()}</h3>
+        <div class="card-body">
       <p>ID:${intern.getId()}</p>
       <p>Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></p>
       <p>School: ${intern.getSchool()}</p>
