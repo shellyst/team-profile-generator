@@ -1,8 +1,11 @@
 function contentHTML(data) {
   function createManager(manager) {
-    return `<div class="card">
-    <div class="manager"><h2>Manager</h2> 
-    <h3>${manager.getName()}</h3>
+    return `<div class="card mr-1 mt-3">
+    <div class="card-header">
+    <h2 class="card-title">Manager</h2> 
+    <h3 class="card-title bg-primary">${manager.getName()}</h3>
+    </div>
+    <div class="card-body">
     <p>ID:${manager.getId()}</p>
     <p>Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></p>
     <p>Office Number: ${manager.getOfficeNumber()}</p>
@@ -13,7 +16,7 @@ function contentHTML(data) {
 
   function createIntern(intern) {
     return `
-    <div class="card">
+    <div class="card" width: 18rem">
     <div class="intern"><h2>Intern</h2> 
         <h3>${intern.getName()}</h3>
       <p>ID:${intern.getId()}</p>
@@ -24,11 +27,9 @@ function contentHTML(data) {
         </div>`;
   }
 
-  
-
   function createEngineer(engineer) {
     return `
-    <div class="card">
+    <div class="card" width: 18rem">
     <div class="engineer"><h2>Engineer</h2> 
        <h3>${engineer.getName()}</h3>
        <p>ID:${engineer.getId()}</p>
@@ -39,12 +40,12 @@ function contentHTML(data) {
         </div>`;
   }
 
-   const content = [];
-   content.push(
-     data
-       .filter((item) => item.getRole() === "Manager")
-       .map((manager) => createManager(manager))
-   );
+  const content = [];
+  content.push(
+    data
+      .filter((item) => item.getRole() === "Manager")
+      .map((manager) => createManager(manager))
+  );
 
   content.push(
     data
@@ -57,7 +58,7 @@ function contentHTML(data) {
       .filter((item) => item.getRole() === "Intern")
       .map((intern) => createIntern(intern))
   );
-  return content.join("")
+  return content.join("");
 }
 
 module.exports = (team) => {
@@ -74,12 +75,19 @@ module.exports = (team) => {
     <title>Team Profile Generator</title>
 </head>
 <body>
-<div class="containter-fluid">
+<div class="container-fluid">
 <div class="row">
-<h1 class="text-center">My Team</h1>
-    ${contentHTML(team)}
+<div class="col-12 mb-3 bg-dark text-white">
+<h1 class="text-center">My Team</h1></div>
     </div>
     </div>
+    <div class="container">
+    <div class="row">
+    <div class="col-12 d-flex flex-wrap p-3">
+        ${contentHTML(team)}
+        </div>
+        </div>
+</div>
 </body>
 </html>
     `;
