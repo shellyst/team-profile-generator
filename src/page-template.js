@@ -3,7 +3,7 @@ function contentHTML(data) {
     return `<div class="card mr-1 mt-3">
     <div class="card-header">
     <h2 class="card-title">Manager</h2> 
-    <h3 class="card-title bg-primary">${manager.getName()}</h3>
+    <h3 class="card-title bg-dark">${manager.getName()}</h3>
     </div>
     <div class="card-body">
     <p>ID:${manager.getId()}</p>
@@ -19,7 +19,7 @@ function contentHTML(data) {
   <div class="card mr-1 mt-3">   
   <div class="card-header"> 
   <h2 class="card-title">Intern</h2> 
-        <h3 class="card-title bg-primary">${intern.getName()}</h3>
+        <h3 class="card-title bg-dark">${intern.getName()}</h3>
          </div>
         <div class="card-body">
       <p>ID:${intern.getId()}</p>
@@ -34,12 +34,12 @@ function contentHTML(data) {
     <div class="card mr-1 mt-3">   
     <div class="card-header"> 
     <h2 class="card-title">Engineer</h2> 
-       <h3>${engineer.getName()}</h3>
+       <h3 class="card-title bg-dark">${engineer.getName()}</h3>
        </div>
        <div class="card-body">
        <p>ID:${engineer.getId()}</p>
       <p>Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></p>
-      <p>Github: [${engineer.getGithub()}](https://github.com/${engineer.getGithub()})</p>
+      <p>Github: <a href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></p>
         </div>
         </div>`;
   }
@@ -87,8 +87,10 @@ module.exports = (team) => {
     </div>
     <div class="container">
     <div class="row">
-    <div class="col-12 d-flex flex-wrap p-3">
+    <div class="col-12 d-flex flex-wrap p-3 content-section">
+    <div class="card-group">
         ${contentHTML(team)}
+        </div>
         </div>
         </div>
 </div>
