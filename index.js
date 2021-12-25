@@ -150,7 +150,7 @@ function start() {
 }
 
 function build() {
-  fs.writeFile("team.html", HTML(teamMembers), (err) => {
+  fs.writeFile("./dist/team.html", HTML(teamMembers), (err) => {
     err ? console.log(err) : console.log("Your HTML file has been created!");
   });
 }
