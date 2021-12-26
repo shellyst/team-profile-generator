@@ -25,7 +25,8 @@ node index.js
 
 ## Demo
 
-[(https://drive.google.com/file/d/1idMbYTdeqYwxtgkwNYwYp5MLKX037tAT/view)](Demo)
+[![image.png](https://i.postimg.cc/tgvmSBXg/image.png)](https://postimg.cc/kV8cDFRr)
+[![Demo]](https://drive.google.com/file/d/1idMbYTdeqYwxtgkwNYwYp5MLKX037tAT/view)
 
 ## Contributors
 
@@ -33,7 +34,11 @@ Michelle Stone
 
 ## Tests
 
-To test this application, first run npm run test in the terminal to ensure program is running correctly, and all four tests pass. Then enter node index.js and complete the prompts, and upon completion check the dist folder to make sure team.html file is created.
+To run the tests for this application, open new terminal window and type:
+
+```
+npm run test
+```
 
 ## Questions
 
