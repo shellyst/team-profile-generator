@@ -25,7 +25,7 @@ node index.js
 
 ## Demo
 
-[![Demo](https://drive.google.com/file/d/1idMbYTdeqYwxtgkwNYwYp5MLKX037tAT/view)](https://drive.google.com/file/d/1idMbYTdeqYwxtgkwNYwYp5MLKX037tAT/view)
+[(https://drive.google.com/file/d/1idMbYTdeqYwxtgkwNYwYp5MLKX037tAT/view)](Demo)
 
 ## Contributors
 
@@ -33,7 +33,7 @@ Michelle Stone
 
 ## Tests
 
-To test this application, run the node index command in the terminal, fill out the prompts, and check to see if a README.md file is generated.
+To test this application, first run npm run test in the terminal to ensure program is running correctly, and all four tests pass. Then enter node index.js and complete the prompts, and upon completion check the dist folder to make sure team.html file is created.
 
 ## Questions
 
